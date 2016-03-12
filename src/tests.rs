@@ -15,7 +15,22 @@ fn test_byte_order_correctly_calculated() {
         // The system is big endian.
         assert_eq!(ByteOrder::BigEndian, byte_order());
     } else {
-            // Something went wrong. Automatically Fail.
-            assert!(false, "Something went wrong with byte_order.");
+        // Something went wrong. Automatically Fail.
+        assert!(false, "Something went wrong with byte_order.");
+    }
+}
+
+#[test]
+#[should_panic]
+fn test_byte_order_differs_from_writing_array_bytes() {
+    let arr: [u8; 2] = [0xAA as u8, 0xBB as u8];
+
+    if arr[0] == 0xBB as u8 {
+        assert_eq!(ByteOrder::BigEndian, byte_order());
+    } else if arr[0] == 0xAA as u8 {
+        assert_eq!(ByteOrder::LittleEndian, byte_order());
+    } else {
+        // Something went wrong. Automatically Fail.
+        assert!(true, "Something went wrong with byte_order.");
     }
 }
