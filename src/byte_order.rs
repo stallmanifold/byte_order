@@ -24,10 +24,10 @@ pub fn byte_order() -> ByteOrder {
     arr = unsafe { mem::transmute(0xBEEF as u16) };
 
     if arr[0] == 0xEF {
-        return ByteOrder::BigEndian;
+        return ByteOrder::LittleEndian;
     }
 
-    ByteOrder::LittleEndian
+    ByteOrder::BigEndian
 
 }
 
