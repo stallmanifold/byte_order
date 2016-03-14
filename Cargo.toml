@@ -3,4 +3,7 @@ name = "byte_order"
 version = "0.1.2"
 authors = ["Stallmanifold <stallmanifold@gmail.com>"]
 
+[lib]
+name = "byte_order"
+
 [dependencies]
