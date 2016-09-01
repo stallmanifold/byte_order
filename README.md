@@ -1,3 +1,6 @@
 # Byte Order
+This package is a crate for calculating the byte order of the system a computer
+program is running on.
 
-A small library for calculating a system's byte order (big endian or little endian).
+### dependencies
+A recent version of `rustc` is all that is necessary to use this crate.
