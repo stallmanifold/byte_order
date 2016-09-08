@@ -55,7 +55,7 @@ pub fn is_big_endian() -> bool {
     }
 }
 
-/// Decides whether a system has big endian byte order.
+/// Decides whether a system has little endian byte order.
 pub fn is_little_endian() -> bool {
     match byte_order() {
         ByteOrder::BigEndian    => false,
